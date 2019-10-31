@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="tat.mukhutdinov.nurseryRoom.home.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/home">
+
+        <action
+            android:id="@+id/toCats"
+            app:destination="@id/cats"
+            app:enterAnim="@anim/nav_enter_anim"
+            app:exitAnim="@anim/nav_exit_anim"
+            app:popEnterAnim="@anim/nav_pop_enter_anim"
+            app:popExitAnim="@anim/nav_pop_exit_anim" />
+
+        <action
+            android:id="@+id/toDogs"
+            app:destination="@id/dogs"
+            app:enterAnim="@anim/nav_enter_anim"
+            app:exitAnim="@anim/nav_exit_anim"
+            app:popEnterAnim="@anim/nav_pop_enter_anim"
+            app:popExitAnim="@anim/nav_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cats"
+        android:name="tat.mukhutdinov.nurseryRoom.cats.ui.CatsFragment"
+        android:label="Cats"
+        tools:layout="@layout/home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/dogs"
+        android:name="tat.mukhutdinov.nurseryRoom.dogs.ui.DogsFragment"
+        android:label="Dogs"
+        tools:layout="@layout/home">
+
+    </fragment>
+</navigation>

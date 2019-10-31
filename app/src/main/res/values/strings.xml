@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Nursery Room</string>
+
+    <string name="home_dogs">Dogs</string>
+    <string name="home_cats">Cats</string>
+
+    <string name="dogs_pair">%1$s </string>
+</resources>
