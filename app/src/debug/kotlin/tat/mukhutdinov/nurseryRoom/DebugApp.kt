@@ -1,15 +1,12 @@
 package tat.mukhutdinov.nurseryRoom
 
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
-import tat.mukhutdinov.nurseryRoom.infrastructure.di.InjectionModules
 import android.app.Application
-import android.os.Build
 import android.os.StrictMode
 import com.facebook.stetho.Stetho
 import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
+import tat.mukhutdinov.nurseryRoom.infrastructure.di.InjectionModules
 import timber.log.Timber
 
 class DebugApp : Application() {
@@ -35,35 +32,18 @@ class DebugApp : Application() {
     }
 
     private fun setupStrictMode() {
-        Dispatchers.Main // https://github.com/googlecodelabs/kotlin-coroutines/issues/23
-
         StrictMode.setThreadPolicy(
             StrictMode.ThreadPolicy.Builder()
                 .detectAll()
                 .penaltyLog()
-                .penaltyDeath()
+                .penaltyFlashScreen()
                 .build()
         )
 
-        val builder = StrictMode.VmPolicy.Builder()
-            .detectActivityLeaks()
-            .detectFileUriExposure()
-            .detectLeakedClosableObjects()
-            .detectLeakedRegistrationObjects()
-            .detectLeakedSqlLiteObjects()
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            builder.detectContentUriWithoutPermission()
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            builder.detectCleartextNetwork()
-        }
-
         StrictMode.setVmPolicy(
-            builder
+            StrictMode.VmPolicy.Builder()
+                .detectAll()
                 .penaltyLog()
-                .penaltyDeath()
                 .build()
         )
     }

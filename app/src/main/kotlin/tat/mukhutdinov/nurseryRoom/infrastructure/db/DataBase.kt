@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import tat.mukhutdinov.nurseryRoom.cats.gateway.entity.CatEntity
 import tat.mukhutdinov.nurseryRoom.dogs.gateway.boundary.DogDao
 import tat.mukhutdinov.nurseryRoom.dogs.gateway.entity.DogEntity
+import tat.mukhutdinov.nurseryRoom.master.gateway.boundary.MasterDao
 import tat.mukhutdinov.nurseryRoom.master.gateway.entity.MasterEntity
 
 @Database(
@@ -13,9 +14,12 @@ import tat.mukhutdinov.nurseryRoom.master.gateway.entity.MasterEntity
         DogEntity::class,
         MasterEntity::class
     ],
-    version = 2
+    version = 3
 )
+
 abstract class DataBase : RoomDatabase() {
 
     abstract fun dogDao(): DogDao
+
+    abstract fun masterDao(): MasterDao
 }

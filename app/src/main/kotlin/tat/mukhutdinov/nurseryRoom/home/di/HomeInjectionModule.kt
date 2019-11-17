@@ -2,7 +2,7 @@ package tat.mukhutdinov.nurseryRoom.home.di
 
 import org.koin.dsl.module
 import tat.mukhutdinov.nurseryRoom.home.redux.HomeStateReducer
-import tat.mukhutdinov.nurseryRoom.home.ui.boundary.HomeReducer
+import tat.mukhutdinov.nurseryRoom.home.redux.boundary.HomeReducer
 
 object HomeInjectionModule {
 

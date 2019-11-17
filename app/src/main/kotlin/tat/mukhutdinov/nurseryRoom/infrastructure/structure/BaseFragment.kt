@@ -20,16 +20,23 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     protected lateinit var viewBinding: V
 
-    protected val viewScope: CoroutineScope = CoroutineScope(Dispatchers.IO + exceptionHandler)
+    protected lateinit var viewScope: CoroutineScope
 
-    protected val fragmentScope: CoroutineScope = CoroutineScope(Dispatchers.IO + exceptionHandler)
+    protected lateinit var fragmentScope: CoroutineScope
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+        fragmentScope = CoroutineScope(Dispatchers.IO + exceptionHandler)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        viewScope = CoroutineScope(Dispatchers.IO + exceptionHandler)
+
         viewBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
         return viewBinding.root

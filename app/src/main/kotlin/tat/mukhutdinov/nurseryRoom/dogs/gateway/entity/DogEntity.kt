@@ -11,7 +11,7 @@ data class DogEntity(
     @ColumnInfo(name = COLUMN_ID)
     var id: Long,
     @ColumnInfo(name = COLUMN_MASTER_ID)
-    var masterId: Long,
+    var masterId: Long?,
     @ColumnInfo(name = COLUMN_NAME)
     var name: String
 ) {

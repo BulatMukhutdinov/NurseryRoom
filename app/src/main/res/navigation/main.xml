@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
@@ -42,5 +43,24 @@
         android:label="Dogs"
         tools:layout="@layout/home">
 
+        <action
+            android:id="@+id/toPet"
+            app:destination="@id/pet" />
     </fragment>
+
+    <dialog
+        android:id="@+id/pet"
+        android:name="tat.mukhutdinov.nurseryRoom.pet.ui.PetFragment"
+        android:label="Pet"
+        tools:layout="@layout/pet">
+
+        <argument
+            android:name="masters"
+            app:argType="tat.mukhutdinov.nurseryRoom.pet.domain.model.PetParticipant[]" />
+
+        <argument
+            android:name="pets"
+            app:argType="tat.mukhutdinov.nurseryRoom.pet.domain.model.PetParticipant[]" />
+    </dialog>
+
 </navigation>

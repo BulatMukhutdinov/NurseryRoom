@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Nursery Room</string>
 
-    <string name="home_dogs">Dogs</string>
-    <string name="home_cats">Cats</string>
+    <string name="home_dogs">One-to-many dogs</string>
+    <string name="home_cats">Many-to-many cats</string>
 
     <string name="dogs_pair">%1$s </string>
+    <string name="dogs_pet_title">Choose a master and a dog</string>
+    <string name="dogs_pet_master">Master</string>
+    <string name="dogs_pet_dog">Dog</string>
+    <string name="dogs_pet_pet">Pet</string>
+    <string name="dogs_pet_cancel">Cancel</string>
 </resources>

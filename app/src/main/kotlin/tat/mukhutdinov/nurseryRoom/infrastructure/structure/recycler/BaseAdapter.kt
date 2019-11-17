@@ -5,11 +5,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseAdapter<Item, VH : BaseViewHolder<Item, *>> : RecyclerView.Adapter<VH>() {
 
-    private val items = mutableListOf<Item>()
+    val items = mutableListOf<Item>()
 
     abstract fun getDiffUtil(updated: List<Item>): DiffUtil.Callback
 
-    fun updateItems(updated: List<Item>) {
+    fun submitList(updated: List<Item>) {
         val diffResult = DiffUtil.calculateDiff(getDiffUtil(updated))
 
         items.clear()

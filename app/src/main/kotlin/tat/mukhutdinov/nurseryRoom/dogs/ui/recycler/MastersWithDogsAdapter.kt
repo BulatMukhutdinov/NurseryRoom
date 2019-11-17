@@ -7,8 +7,6 @@ import tat.mukhutdinov.nurseryRoom.infrastructure.structure.recycler.BaseAdapter
 
 class MastersWithDogsAdapter : BaseAdapter<MasterWithDogs, MastersWithDogsViewHolder>() {
 
-    private val items = mutableListOf<MasterWithDogs>()
-
     init {
         setHasStableIds(true)
     }

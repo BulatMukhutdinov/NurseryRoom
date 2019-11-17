@@ -7,8 +7,7 @@
 
         <variable
             name="item"
-            type="tat.mukhutdinov.nurseryRoom.dogs.domain.model.Dog" />
-
+            type="tat.mukhutdinov.nurseryRoom.dogs.domain.model.MasterWithDogs" />
     </data>
 
     <TextView
@@ -17,7 +16,7 @@
         android:ellipsize="end"
         android:padding="8dp"
         android:singleLine="true"
-        android:text="@{item.name}"
+        android:text="@{item.toString()}"
         android:textSize="16sp"
         tools:text="@tools:sample/full_names" />
 </layout>

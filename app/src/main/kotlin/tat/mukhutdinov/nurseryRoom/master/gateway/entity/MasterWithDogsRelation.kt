@@ -1,8 +1,8 @@
-package tat.mukhutdinov.nurseryRoom.dogs.gateway.entity
+package tat.mukhutdinov.nurseryRoom.master.gateway.entity
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import tat.mukhutdinov.nurseryRoom.master.gateway.entity.MasterEntity
+import tat.mukhutdinov.nurseryRoom.dogs.gateway.entity.DogEntity
 
 data class MasterWithDogsRelation(
     @Embedded
