@@ -40,6 +40,6 @@ class HomeFragment : BaseFragment<HomeBinding>(), HomeBindings {
     }
 
     override fun onCatsClicked() {
-        viewScope.launch { reducer.intent(HomeAction.ShowDogs) }
+        viewScope.launch { reducer.intent(HomeAction.ShowCats) }
     }
 }

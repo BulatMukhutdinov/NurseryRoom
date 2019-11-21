@@ -33,15 +33,17 @@
         android:id="@+id/cats"
         android:name="tat.mukhutdinov.nurseryRoom.cats.ui.CatsFragment"
         android:label="Cats"
-        tools:layout="@layout/home">
-
+        tools:layout="@layout/cats">
+        <action
+            android:id="@+id/toPet"
+            app:destination="@id/pet" />
     </fragment>
 
     <fragment
         android:id="@+id/dogs"
         android:name="tat.mukhutdinov.nurseryRoom.dogs.ui.DogsFragment"
         android:label="Dogs"
-        tools:layout="@layout/home">
+        tools:layout="@layout/dogs">
 
         <action
             android:id="@+id/toPet"

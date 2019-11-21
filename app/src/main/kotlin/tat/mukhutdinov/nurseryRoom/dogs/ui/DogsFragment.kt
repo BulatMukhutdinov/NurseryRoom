@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -79,7 +78,10 @@ class DogsFragment : BaseFragment<DogsBinding>(), DogsBindings {
 
         if (state.shouldShowPetDialog) {
             findNavController().navigate(
-                DogsFragmentDirections.toPet(state.masters.toTypedArray(), state.dogs.toTypedArray())
+                DogsFragmentDirections.toPet(
+                    state.masters.toTypedArray(),
+                    state.dogs.toTypedArray()
+                )
             )
         }
     }

@@ -1,11 +1,6 @@
 package tat.mukhutdinov.nurseryRoom.dogs.gateway.boundary
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Transaction
-import androidx.room.Update
+import androidx.room.*
 import tat.mukhutdinov.nurseryRoom.dogs.gateway.entity.DogEntity
 import tat.mukhutdinov.nurseryRoom.dogs.gateway.entity.DogWithMasterRelation
 
@@ -19,6 +14,7 @@ interface DogDao {
     @Query("SELECT * FROM ${DogEntity.TABLE_NAME}")
     suspend fun getDogsWithMaster(): List<DogWithMasterRelation>
 
+    @Transaction
     @Query("SELECT * FROM ${DogEntity.TABLE_NAME} WHERE ${DogEntity.COLUMN_ID} = :id")
     suspend fun getDogWithMasterById(id: Long): DogWithMasterRelation
 

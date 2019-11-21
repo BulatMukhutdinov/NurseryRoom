@@ -9,9 +9,9 @@ import tat.mukhutdinov.nurseryRoom.master.gateway.entity.MasterEntity.Companion.
 data class MasterEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
-    var id: Long,
+    val id: Long,
     @ColumnInfo(name = COLUMN_NAME)
-    var name: String
+    val name: String
 ) {
 
     companion object {

@@ -11,7 +11,7 @@ object MasterInjectionModule {
     val module = module {
 
         factory {
-            MasterConverter()
+            MasterConverter(get())
         }
 
         single {

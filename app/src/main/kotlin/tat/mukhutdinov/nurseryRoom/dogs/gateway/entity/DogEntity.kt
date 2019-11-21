@@ -9,11 +9,11 @@ import tat.mukhutdinov.nurseryRoom.dogs.gateway.entity.DogEntity.Companion.TABLE
 data class DogEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
-    var id: Long,
+    val id: Long,
     @ColumnInfo(name = COLUMN_MASTER_ID)
-    var masterId: Long?,
+    val masterId: Long?,
     @ColumnInfo(name = COLUMN_NAME)
-    var name: String
+    val name: String
 ) {
 
     companion object {

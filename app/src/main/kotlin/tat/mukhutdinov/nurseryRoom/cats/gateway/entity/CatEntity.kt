@@ -9,9 +9,9 @@ import tat.mukhutdinov.nurseryRoom.cats.gateway.entity.CatEntity.Companion.TABLE
 data class CatEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
-    var id: Long,
+    val id: Long,
     @ColumnInfo(name = COLUMN_NAME)
-    var name: String
+    val name: String
 ) {
 
     companion object {

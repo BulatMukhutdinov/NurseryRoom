@@ -2,6 +2,7 @@ package tat.mukhutdinov.nurseryRoom.master.gateway
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import tat.mukhutdinov.nurseryRoom.cats.domain.model.MasterWithCats
 import tat.mukhutdinov.nurseryRoom.dogs.domain.model.MasterWithDogs
 import tat.mukhutdinov.nurseryRoom.master.domain.boundary.MasterGateway
 import tat.mukhutdinov.nurseryRoom.master.domain.model.Master
@@ -15,6 +16,10 @@ class MasterLocalGateway(private val dao: MasterDao, private val converter: Mast
             .map(converter::convert)
 
     override fun getMastersWithDogs(): Flow<List<MasterWithDogs>> =
-        dao.getMasterWithDogs()
+        dao.getMastersWithDogs()
+            .map { it.map(converter::convert) }
+
+    override fun getMastersWithCats(): Flow<List<MasterWithCats>> =
+        dao.getMastersWithCats()
             .map { it.map(converter::convert) }
 }

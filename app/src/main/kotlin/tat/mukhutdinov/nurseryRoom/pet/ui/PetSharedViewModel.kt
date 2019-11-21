@@ -1,9 +1,9 @@
 package tat.mukhutdinov.nurseryRoom.pet.ui
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import tat.mukhutdinov.nurseryRoom.infrastructure.util.SingleLiveEvent
 
 class PetSharedViewModel : ViewModel() {
 
-    val selectedMasterIdToPetId = MutableLiveData<Pair<Long, Long>>()
+    val selectedMasterIdToPetId = SingleLiveEvent<Pair<Long, Long>>()
 }

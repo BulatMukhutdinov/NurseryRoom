@@ -7,6 +7,7 @@ import tat.mukhutdinov.nurseryRoom.dogs.domain.boundary.DogGateway
 import tat.mukhutdinov.nurseryRoom.dogs.gateway.DogLocalGateway
 import tat.mukhutdinov.nurseryRoom.dogs.gateway.entity.DogConverter
 import tat.mukhutdinov.nurseryRoom.dogs.redux.DogsStateReducer
+import tat.mukhutdinov.nurseryRoom.cats.redux.boundary.CatsReducer
 import tat.mukhutdinov.nurseryRoom.dogs.redux.boundary.DogsReducer
 import tat.mukhutdinov.nurseryRoom.infrastructure.db.DataBase
 
