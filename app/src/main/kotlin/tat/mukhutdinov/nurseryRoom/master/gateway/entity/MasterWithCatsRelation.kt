@@ -15,9 +15,9 @@ data class MasterWithCatsRelation(
         entity = CatEntity::class,
         associateBy = Junction(
             value = CatWithMasterEntity::class,
-            entityColumn = CatWithMasterEntity.COLUMN_MASTER_ID,
-            parentColumn = CatWithMasterEntity.COLUMN_CAT_ID
-        )
+            parentColumn = CatWithMasterEntity.COLUMN_MASTER_ID,
+            entityColumn = CatWithMasterEntity.COLUMN_CAT_ID
+            )
     )
     val cats: List<CatEntity>
 )
